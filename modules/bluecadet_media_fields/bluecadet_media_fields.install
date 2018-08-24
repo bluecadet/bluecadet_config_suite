@@ -1,0 +1,7 @@
+<?php
+
+function bluecadet_media_fields_install() {
+
+  $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays";
+  drupal_set_message($message, 'status');
+}
