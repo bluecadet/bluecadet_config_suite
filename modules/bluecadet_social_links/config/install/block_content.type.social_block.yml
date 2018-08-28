@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: social_block
+label: 'Social Block'
+revision: 1
+description: 'Used to display Global Social Icons'
