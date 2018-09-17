@@ -1,0 +1,163 @@
+<?php
+
+/**
+ * @file
+ * Install, update, and uninstall functions for the BC Text Formats module.
+ */
+
+/**
+ * Update Text Formats Correctly.
+ */
+function bluecadet_text_formats_install() {
+  $config_factory = \Drupal::configFactory();
+
+  // Update editor.editor.basic_html
+  $config = $config_factory->getEditable('editor.editor.basic_html');
+
+  $settings = $config->get('settings');
+
+  $settings['toolbar']['rows'] = [
+    [
+      [
+        'name' => "Formatting",
+        'items' => [
+          'Bold',
+          'Italic'
+        ]
+      ],
+      [
+        'name' => "Tool",
+        'items' => [
+          'Source'
+        ]
+      ]
+    ]
+  ];
+
+  $config->set('settings', $settings);
+  $config->save(TRUE);
+
+
+  // Update editor.editor.basic_html
+  $config = $config_factory->getEditable('editor.editor.full_html');
+
+  $settings = $config->get('settings');
+
+  $settings['toolbar']['rows'] = [
+    [
+      [
+        'name' => "Formatting",
+        'items' => [
+          'Bold',
+          'Italic',
+          'Strike',
+          'Superscript',
+          'Subscript',
+          '-',
+          'RemoveFormat'
+        ]
+      ],
+      [
+        'name' => "Linking",
+        'items' => [
+          'DrupalLink',
+          'DrupalUnlink'
+        ]
+      ],
+      [
+        'name' => "Lists",
+        'items' => [
+          'BulletedList',
+          'NumberedList'
+        ]
+      ],
+      [
+        'name' => "Media",
+        'items' => [
+          'Blockquote',
+          'Table',
+          'HorizontalRule'
+        ]
+      ],
+      [
+        'name' => "Block Formatting",
+        'items' => [
+          'Format'
+        ]
+      ],
+      [
+        'name' => "Tool",
+        'items' => [
+          'ShowBlocks',
+          'Source'
+        ]
+      ]
+    ]
+  ];
+
+  $config->set('settings', $settings);
+  $config->save(TRUE);
+
+
+
+  // Update filter.format.basic_html
+  $config = $config_factory->getEditable('filter.format.basic_html');
+
+  $filters = $config->get('filters');
+
+  $filters['filter_html']['settings']['allowed_html'] = '<em> <strong>';
+  $filters['filter_align']['status'] = false;
+  $filters['filter_caption']['status'] = false;
+  $filters['editor_file_reference']['status'] = false;
+  unset($filters['filter_html_image_secure']);
+
+  $config->set('filters', $filters);
+
+  $config->set('weight', -8);
+
+  $config->save(TRUE);
+
+
+  // Update filter.format.full_html
+  $config = $config_factory->getEditable('filter.format.full_html');
+
+  $filters = $config->get('filters');
+
+  $filters['filter_align']['status'] = false;
+  $filters['filter_caption']['status'] = false;
+  $filters['editor_file_reference']['status'] = false;
+
+  $config->set('filters', $filters);
+
+  $config->set('weight', -7);
+
+  $config->save(TRUE);
+
+
+  // Update filter.format.plain_text
+  $config = $config_factory->getEditable('filter.format.plain_text');
+
+  $config->set('weight', -10);
+
+  $config->save(TRUE);
+
+
+  // Update filter.format.restricted_html
+  $config = $config_factory->getEditable('filter.format.restricted_html');
+
+  $config->set('status', FALSE);
+
+  $config->save(TRUE);
+
+
+
+  // User Permissions.
+  $config = $config_factory->getEditable('user.role.authenticated');
+
+  $permissions = $config->get('permissions');
+  $permissions[] = "use text format plain_text_formatter";
+
+  $config->set('permissions', $permissions);
+  $config->save(TRUE);
+}
+
