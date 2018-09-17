@@ -19,7 +19,7 @@ mode: default
 content:
   field_s_facebook:
     type: link_default
-    weight: 0
+    weight: 1
     region: content
     settings:
       placeholder_url: ''
@@ -27,7 +27,7 @@ content:
     third_party_settings: {  }
   field_s_flickr:
     type: link_default
-    weight: 1
+    weight: 2
     region: content
     settings:
       placeholder_url: ''
@@ -35,7 +35,7 @@ content:
     third_party_settings: {  }
   field_s_instagram:
     type: link_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
@@ -43,7 +43,7 @@ content:
     third_party_settings: {  }
   field_s_snapchat:
     type: link_default
-    weight: 6
+    weight: 7
     region: content
     settings:
       placeholder_url: ''
@@ -51,7 +51,7 @@ content:
     third_party_settings: {  }
   field_s_twitter:
     type: link_default
-    weight: 4
+    weight: 5
     region: content
     settings:
       placeholder_url: ''
@@ -59,7 +59,7 @@ content:
     third_party_settings: {  }
   field_s_youtube:
     type: link_default
-    weight: 5
+    weight: 6
     region: content
     settings:
       placeholder_url: ''
@@ -67,7 +67,7 @@ content:
     third_party_settings: {  }
   info:
     type: string_textfield
-    weight: 7
+    weight: 0
     region: content
     settings:
       size: 60
