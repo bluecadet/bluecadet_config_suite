@@ -1,0 +1,10 @@
+uuid: 8257d383-96e9-42fc-84fe-7bc6b036001c
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.inline_entity_form
+label: 'Inline Entity Form'
+targetEntityType: media
+cache: true
