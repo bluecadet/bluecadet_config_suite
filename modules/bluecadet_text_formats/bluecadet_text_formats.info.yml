@@ -3,4 +3,4 @@ type: module
 description: Basic text format Settings. This module should be installed on as close to a NEW project as possible. Errors may occur if any changes have happened on text formats already.
 core: 8.x
 package: Bluecadet
-version: '8.x-1.0.0-alpha'
+version: '8.x-1.1.0'
