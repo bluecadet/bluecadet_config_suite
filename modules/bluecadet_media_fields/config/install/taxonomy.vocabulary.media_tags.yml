@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Media Tags'
+vid: media_tags
+description: 'Tag your media to find it later on.'
+hierarchy: 0
+weight: 0

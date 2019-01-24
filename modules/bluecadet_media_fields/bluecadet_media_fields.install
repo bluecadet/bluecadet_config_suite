@@ -8,6 +8,6 @@
  * Display message to user to update Form and View Displays.
  */
 function bluecadet_media_fields_install() {
-  $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays";
+  $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays. We also recommend not using and removeing the default 'Remote video' media bundle.";
   drupal_set_message($message, 'status');
 }
