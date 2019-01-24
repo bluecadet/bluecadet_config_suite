@@ -10,7 +10,7 @@ id: media.video.field_credit
 field_name: field_credit
 entity_type: media
 bundle: video
-label: Source
+label: Credit
 description: ''
 required: false
 translatable: true
