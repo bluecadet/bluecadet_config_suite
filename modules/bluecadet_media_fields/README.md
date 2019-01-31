@@ -1,7 +1,7 @@
 
 
 
-- Need to attach media library to new view, and disable the `media_entity_browser` view.
+ *  Need to attach media library to new view, and disable the `media_entity_browser` view.
 
 ```
 /**
