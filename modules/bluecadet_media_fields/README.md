@@ -1,9 +1,8 @@
+# Bluecadet Media Fields and Config
 
+-  Need to attach media library to new view, and disable the `media_entity_browser` view.
 
-
- *  Need to attach media library to new view, and disable the `media_entity_browser` view.
-
-```
+```php
 /**
  * Implements hook_preprocess_views_view().
  */
