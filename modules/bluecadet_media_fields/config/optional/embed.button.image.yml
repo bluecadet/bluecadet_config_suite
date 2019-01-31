@@ -7,7 +7,7 @@ dependencies:
     - entity_embed
     - media
 label: 'Image Media Embed'
-id: image_media_embed
+id: image
 type_id: entity
 type_settings:
   entity_type: media

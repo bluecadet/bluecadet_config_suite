@@ -6,11 +6,12 @@ package: Bluecadet
 version: '8.x-1.1.1'
 
 dependencies:
- - media (>= 8.5.3)
- - video_embed_field
- - video_embed_media
- - entity_browser
- - media_entity_browser
- - entity_browser_entity_form
- - entity_embed
+  - allowed_formats
+  - media (>= 8.5.3)
+  - video_embed_field
+  - video_embed_media
+  - entity_browser
+  - media_entity_browser
+  - entity_browser_entity_form
+  - entity_embed
 
