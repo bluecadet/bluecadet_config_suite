@@ -8,6 +8,538 @@
  * Display message to user to update Form and View Displays.
  */
 function bluecadet_media_fields_install() {
-  $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays. We also recommend not using and removeing the default 'Remote video' media bundle.";
+
+  // Build Entity Browsers
+  $eb_configs = [];
+
+  $eb_configs['image_browser'] = [
+    'config' => [
+      'name' => 'image_browser',
+      'label' => 'Image Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select images',
+        'auto_open' => FALSE,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'Images',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'image_entity_browser',
+          'submit_text' => 'Select Images',
+          'auto_select' => FALSE,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Image',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'image',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Image',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['video_browser'] = [
+    'config' => [
+      'name' => 'video_browser',
+      'label' => 'Video Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select videos',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Videos',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'all_video_entity_browser',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Local Video',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Embeded Video',
+        'weight' => 3,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video_embed',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['file_browser'] = [
+    'config' => [
+      'name' => 'file_browser',
+      'label' => 'File Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select files',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Field',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'files_entity_browser',
+          'submit_text' => 'Select Files',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload File',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'file',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save File',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['audio_browser'] = [
+    'config' => [
+      'name' => 'audio_browser',
+      'label' => 'Audio Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select Audio',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Field',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'audio_entity_browser',
+          'submit_text' => 'Select Audio',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Audio',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'audio',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Audio',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['image_video_browser'] = [
+    'config' => [
+      'name' => 'image_video_browser',
+      'label' => 'Image/Video Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select image or videos',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Media',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'all_video_image_entity_browser',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Image',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'image',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Image',
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Local Video',
+        'weight' => 3,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Embeded Video',
+        'weight' => 4,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video_embed',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['embeded_video_browser'] = [
+    'config' => [
+      'name' => 'embeded_video_browser',
+      'label' => 'Embeded Video Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select videos',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Videos',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'embeded_video_entity_browser',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Embeded Video',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video_embed',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['local_video_browser'] = [
+    'config' => [
+      'name' => 'local_video_browser',
+      'label' => 'Local Video Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select videos',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Videos',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'local_video_entity_browser',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Local Video',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['local_image_video_browser'] = [
+    'config' => [
+      'name' => 'local_image_video_browser',
+      'label' => 'Local Image/Video Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '',
+        'height' => '',
+        'link_text' => 'Select image or videos',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Media',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'local_video_image_entity_browse',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Image',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'image',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Image',
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Local Video',
+        'weight' => 3,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['wy_image_browser'] = [
+    'config' => [
+      'name' => 'wy_image_browser',
+      'label' => 'WYSIWYG Image Browser',
+      'display' => 'iframe',
+      'display_configuration' => [
+        'width' => '100%',
+        'height' => '768',
+        'link_text' => 'Select images',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'Images',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'image_entity_browser',
+          'submit_text' => 'Select Images',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Image',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'image',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Image',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['wy_file_browser'] = [
+    'config' => [
+      'name' => 'wy_file_browser',
+      'label' => 'WYSIWYG File Browser',
+      'display' => 'iframe',
+      'display_configuration' => [
+        'width' => '100%',
+        'height' => '768',
+        'link_text' => 'Select files',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Field',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'files_entity_browser',
+          'submit_text' => 'Select Files',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload File',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'file',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save File',
+        ],
+      ],
+    ],
+  ];
+
+  $eb_configs['wy_audio_browser'] = [
+    'config' => [
+      'name' => 'wy_audio_browser',
+      'label' => 'WYSIWYG Audio Browser',
+      'display' => 'modal',
+      'display_configuration' => [
+        'width' => '100%',
+        'height' => '768',
+        'link_text' => 'Select Audio',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Field',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser_custom',
+          'view_display' => 'audio_entity_browser',
+          'submit_text' => 'Select Audio',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Audio',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'audio',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Audio',
+        ],
+      ],
+    ],
+  ];
+
+  foreach ($eb_configs as $eb_config) {
+
+    $eb = EntityBrowser::load($eb_config['config']['name']);
+
+    if(!$eb) {
+      $eb = EntityBrowser::create($eb_config['config']);
+      $eb->save();
+      drupal_set_message(t('Added Entity Browser: %eb', ['%eb' => $eb_config['config']['label']]));
+      foreach ($eb_config['widgets'] as $w) {
+        $eb->addWidget($w);
+        $eb->save();
+      }
+    }
+    else {
+      drupal_set_message(t('Entity Browser: %eb already exists', ['%eb' => $eb_config['config']['label']]));
+    }
+  }
+
+
+  $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays. We also recommend not using and removeing the default 'Remote video' media bundle.
+  Need to attach media library to new view.
+  Please See module README";
+
   drupal_set_message($message, 'status');
 }

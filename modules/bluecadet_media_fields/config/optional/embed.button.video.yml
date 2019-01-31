@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.video
+    - media.type.video_embed
+  module:
+    - entity_embed
+    - media
+label: Video
+id: video
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - video
+    - video_embed
+  display_plugins:
+    - 'view_mode:media.wysiwyg_full'
+  entity_browser: wy_video_browser
+  entity_browser_settings:
+    display_review: false
+icon_uuid: null
