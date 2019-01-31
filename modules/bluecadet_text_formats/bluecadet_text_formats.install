@@ -22,21 +22,20 @@ function bluecadet_text_formats_install() {
         'name' => "Formatting",
         'items' => [
           'Bold',
-          'Italic'
-        ]
+          'Italic',
+        ],
       ],
       [
         'name' => "Tool",
         'items' => [
-          'Source'
-        ]
-      ]
-    ]
+          'Source',
+        ],
+      ],
+    ],
   ];
 
   $config->set('settings', $settings);
   $config->save(TRUE);
-
 
   // Update editor.editor.basic_html
   $config = $config_factory->getEditable('editor.editor.full_html');
@@ -54,51 +53,49 @@ function bluecadet_text_formats_install() {
           'Superscript',
           'Subscript',
           '-',
-          'RemoveFormat'
-        ]
+          'RemoveFormat',
+        ],
       ],
       [
         'name' => "Linking",
         'items' => [
           'DrupalLink',
-          'DrupalUnlink'
-        ]
+          'DrupalUnlink',
+        ],
       ],
       [
         'name' => "Lists",
         'items' => [
           'BulletedList',
-          'NumberedList'
-        ]
+          'NumberedList',
+        ],
       ],
       [
         'name' => "Media",
         'items' => [
           'Blockquote',
           'Table',
-          'HorizontalRule'
-        ]
+          'HorizontalRule',
+        ],
       ],
       [
         'name' => "Block Formatting",
         'items' => [
-          'Format'
-        ]
+          'Format',
+        ],
       ],
       [
         'name' => "Tool",
         'items' => [
           'ShowBlocks',
           'Source'
-        ]
-      ]
-    ]
+        ],
+      ],
+    ],
   ];
 
   $config->set('settings', $settings);
   $config->save(TRUE);
-
-
 
   // Update filter.format.basic_html
   $config = $config_factory->getEditable('filter.format.basic_html');
@@ -106,9 +103,9 @@ function bluecadet_text_formats_install() {
   $filters = $config->get('filters');
 
   $filters['filter_html']['settings']['allowed_html'] = '<em> <strong>';
-  $filters['filter_align']['status'] = false;
-  $filters['filter_caption']['status'] = false;
-  $filters['editor_file_reference']['status'] = false;
+  $filters['filter_align']['status'] = FALSE;
+  $filters['filter_caption']['status'] = FALSE;
+  $filters['editor_file_reference']['status'] = FALSE;
   unset($filters['filter_html_image_secure']);
 
   $config->set('filters', $filters);
@@ -123,9 +120,9 @@ function bluecadet_text_formats_install() {
 
   $filters = $config->get('filters');
 
-  $filters['filter_align']['status'] = false;
-  $filters['filter_caption']['status'] = false;
-  $filters['editor_file_reference']['status'] = false;
+  $filters['filter_align']['status'] = FALSE;
+  $filters['filter_caption']['status'] = FALSE;
+  $filters['editor_file_reference']['status'] = FALSE;
 
   $config->set('filters', $filters);
 
@@ -141,15 +138,12 @@ function bluecadet_text_formats_install() {
 
   $config->save(TRUE);
 
-
   // Update filter.format.restricted_html
   $config = $config_factory->getEditable('filter.format.restricted_html');
 
   $config->set('status', FALSE);
 
   $config->save(TRUE);
-
-
 
   // User Permissions.
   $config = $config_factory->getEditable('user.role.authenticated');
@@ -159,5 +153,5 @@ function bluecadet_text_formats_install() {
 
   $config->set('permissions', $permissions);
   $config->save(TRUE);
-}
 
+}
