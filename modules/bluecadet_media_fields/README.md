@@ -13,3 +13,5 @@ function HOOK_preprocess_views_view(&$variables) {
   }
 }
 ```
+
+OR Remove `media_entity_browser` view and clone `media_entity_browser_custom` back to `media_entity_browser`
