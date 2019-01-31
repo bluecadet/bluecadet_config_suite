@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.audio
+  module:
+    - entity_embed
+    - media
+label: Audio
+id: audio
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - audio
+  display_plugins:
+    - 'view_mode:media.wysiwyg_full'
+  entity_browser: wysiwyg_audio_entity_browser
+  entity_browser_settings:
+    display_review: false
+icon_uuid: null

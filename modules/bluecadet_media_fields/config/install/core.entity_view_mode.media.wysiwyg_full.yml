@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.wysiwyg_full
+label: 'WYSIWYG Full'
+targetEntityType: media
+cache: true

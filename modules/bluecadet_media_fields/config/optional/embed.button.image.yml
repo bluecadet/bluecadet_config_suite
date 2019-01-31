@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - media.type.image
+  module:
+    - entity_embed
+    - media
+label: 'Image Media Embed'
+id: image_media_embed
+type_id: entity
+type_settings:
+  entity_type: media
+  bundles:
+    - image
+  display_plugins:
+    - 'view_mode:media.wysiwyg_full'
+    - 'view_mode:media.wysiwyg_left'
+    - 'view_mode:media.wysiwyg_right'
+  entity_browser: wy_image_browser
+  entity_browser_settings:
+    display_review: false
+icon_uuid: null
