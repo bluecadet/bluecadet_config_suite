@@ -15,7 +15,7 @@ type_settings:
     - audio
   display_plugins:
     - 'view_mode:media.wysiwyg_full'
-  entity_browser: wysiwyg_audio_entity_browser
+  entity_browser: wy_audio_browser
   entity_browser_settings:
     display_review: false
 icon_uuid: null
