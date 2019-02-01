@@ -11,7 +11,7 @@ function bluecadet_media_fields_install() {
   $view_config = \Drupal::configFactory()
     ->getEditable('views.view.media_entity_browser');
 
-  $path = drupal_get_path('module', 'bc_sandbox') . '/config/to_override/views.view.media_entity_browser.yml';
+  $path = drupal_get_path('module', 'bluecadet_media_fields') . '/config/to_override/views.view.media_entity_browser.yml';
 
   $data = Yaml::parse(file_get_contents($path));
   $view_config->setData($data);
