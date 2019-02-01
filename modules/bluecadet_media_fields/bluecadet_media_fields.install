@@ -14,6 +14,8 @@ function bluecadet_media_fields_install() {
   $path = drupal_get_path('module', 'bluecadet_media_fields') . '/config/to_override/views.view.media_entity_browser.yml';
 
   $data = Yaml::parse(file_get_contents($path));
+  $data['uuid'] = $view_config->get('uuid');
+  $data['_core'] = $view_config->get('_core');
   $view_config->setData($data);
   $view_config->save();
 
@@ -599,7 +601,6 @@ function bluecadet_media_fields_install() {
 
 
   $message = "Bluecadet Image Fields has been installed. Please update your Image and Video Media Form Displays and View Displays. We also recommend not using and removeing the default 'Remote video' media bundle.
-  Need to attach media library to new view.
   Please See module README";
 
   drupal_set_message($message, 'status');

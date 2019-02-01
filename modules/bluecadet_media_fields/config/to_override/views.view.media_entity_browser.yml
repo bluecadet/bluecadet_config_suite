@@ -488,11 +488,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -739,11 +734,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -985,11 +975,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1187,11 +1172,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1389,11 +1369,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -1759,11 +1734,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -2005,11 +1975,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
@@ -2207,11 +2172,6 @@ display:
               authenticated: authenticated
               anonymous: '0'
               administrator: '0'
-              content_author_full_access: '0'
-              content_author_editorial: '0'
-              content_author_marketing: '0'
-              content_editor: '0'
-              content_contributor: '0'
             reduce: false
           is_grouped: false
           group_info:
