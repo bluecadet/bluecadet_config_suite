@@ -526,6 +526,59 @@ function bluecadet_media_fields_install() {
     ],
   ];
 
+  $eb_configs['wy_video_browser'] = [
+    'config' => [
+      'name' => 'wy_video_browser',
+      'label' => 'WYSIWYG Video Browser',
+      'display' => 'iframe',
+      'display_configuration' => [
+        'width' => '100%',
+        'height' => '768',
+        'link_text' => 'Select images',
+        'auto_open' => false,
+      ],
+      'selection_display' => 'no_display',
+      'selection_display_configuration' => [],
+      'widget_selector' => 'tabs',
+      'widget_selector_configuration' => [],
+    ],
+    'widgets' => [
+      [
+        'id' => 'view',
+        'label' => 'View Videos',
+        'weight' => 1,
+        'settings' => [
+          'view' => 'media_entity_browser',
+          'view_display' => 'all_video_entity_browser',
+          'submit_text' => 'Select Videos',
+          'auto_select' => false,
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Local Video',
+        'weight' => 2,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+      [
+        'id' => 'entity_form',
+        'label' => 'Upload Embeded Video',
+        'weight' => 3,
+        'settings' => [
+          'entity_type' => 'media',
+          'bundle' => 'video_embed',
+          'form_mode' => 'inline_entity_form',
+          'submit_text' => 'Save Video',
+        ],
+      ],
+    ],
+  ];
+
   foreach ($eb_configs as $eb_config) {
 
     $eb = EntityBrowser::load($eb_config['config']['name']);
