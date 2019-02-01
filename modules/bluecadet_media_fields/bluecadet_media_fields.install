@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\entity_browser\Entity\EntityBrowser;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Display message to user to update Form and View Displays.
