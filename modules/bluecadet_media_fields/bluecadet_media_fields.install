@@ -372,7 +372,7 @@ function bluecadet_media_fields_install() {
         'weight' => 1,
         'settings' => [
           'view' => 'media_entity_browser',
-          'view_display' => 'local_image_video_entity_browse',
+          'view_display' => 'local_image_video_entity_browser',
           'submit_text' => 'Select Videos',
           'auto_select' => FALSE,
         ],
