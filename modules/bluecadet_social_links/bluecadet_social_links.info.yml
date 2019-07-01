@@ -4,3 +4,8 @@ description: Basic fields social links in a block
 core: 8.x
 package: Bluecadet
 version: '8.x-1.1.6'
+
+dependencies:
+  - field
+  - link
+  - block_content
