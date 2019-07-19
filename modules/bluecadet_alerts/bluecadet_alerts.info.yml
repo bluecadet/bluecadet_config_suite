@@ -1,4 +1,4 @@
-name: Bluecadet Alerts
+name: "Bluecadet Alerts [Sub-module: BC Config Suite]"
 type: module
 description: Basic Alert Functionality. This can be used as a starter for more compilcated alerts.
 core: 8.x

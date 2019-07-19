@@ -1,4 +1,4 @@
-name: Bluecadet Media Fields and Config
+name: "Bluecadet Media Fields and Config [Sub-module: BC Config Suite]"
 type: module
 description: Basic fields for media as well as Entity Browsers, and Entity Embed Buttons
 core: 8.x

@@ -1,4 +1,4 @@
-name: Bluecadet Text Formats
+name: "Bluecadet Text Formats [Sub-module: BC Config Suite]"
 type: module
 description: Basic text format Settings. This module should be installed on as close to a NEW project as possible. Errors may occur if any changes have happened on text formats already.
 core: 8.x
