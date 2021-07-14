@@ -10,3 +10,9 @@ Module List:
 *  bluecadet_media_fields
 *  bluecadet_social_links
 *  bluecadet_text_formats
+
+## Changelog
+
+### 8.x-1.1.7
+
+- Updated dependencies so we can use Composer v2
